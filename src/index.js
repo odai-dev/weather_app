@@ -1,5 +1,24 @@
 import './styles.css';
 
+const cityInput = document.querySelector('#cityInput');
+const searchBtn = document.querySelector('.search-btn');
+
+
+
+searchBtn.addEventListener('click', () => {
+    console.log('clicked');
+    let city = cityInput.value;
+    console.log(city)
+
+    const weatherJson = getWeather(city);
+    weatherJson.then(result => {
+        if ( result) {
+        console.log(refineWeatherJson(result));
+    } 
+        
+    })
+})
+
 
 async function getWeather(location = '') {
     try{
@@ -15,11 +34,8 @@ async function getWeather(location = '') {
         console.error(`Fetch error: ${e}`);
     }
 }
-const weatherJson =  await getWeather('ndon');
 
-if (weatherJson) {
-    console.log(refineWeatherJson(weatherJson));
-} 
+ 
 
 function refineWeatherJson(weatherJson = {}) {
     return {
