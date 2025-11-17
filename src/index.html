@@ -6,7 +6,25 @@
     <title>Weather App</title>
 </head>
 <body>
-    <input type="text" placeholder="Enter a city" id="cityInput">
-    <button class="btn search-btn">Search</button>
+    <main>
+        <h1>Weather App</h1>
+        <div class="search-from">
+            <div class="input-group">
+                <input type="text" placeholder="search a city" id="cityInput">
+                <button class="btn search-btn">Search</button>
+            </div>
+            <div class="error"></div>
+        </div>
+        
+        <div class="weather-info">
+            <div class="weather-card">
+                <h3 id="address"></h3>
+                <p id="temp"></p>
+                <p id="desc"></p>
+                <p id="humidity"></p>
+                <p id="precipitation"></p>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
